@@ -6,11 +6,11 @@
 /*   By: ymaaloum <ymaaloum@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 00:02:01 by ymaaloum          #+#    #+#             */
-/*   Updated: 2024/05/20 05:11:11 by ymaaloum         ###   ########.fr       */
+/*   Updated: 2024/05/21 03:18:39 by ymaaloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 static int	ft_checkarg(const char *s, va_list countptr)
 {

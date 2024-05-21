@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymaaloum <ymaaloum@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 17:35:46 by ymaaloum          #+#    #+#             */
-/*   Updated: 2022/11/09 22:40:25 by ymaaloum         ###   ########.fr       */
+/*   Created: 2022/10/19 02:38:45 by ymaaloum          #+#    #+#             */
+/*   Updated: 2024/05/21 03:17:58 by ymaaloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
-int	ft_putchar(int c)
+size_t	ft_strlen(const char *s)
 {
-	write(1, &c, 1);
-	return (1);
+	size_t	length;
+
+	length = 0;
+	while (s[length])
+		length++;
+	return (length);
 }

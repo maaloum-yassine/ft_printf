@@ -1,56 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_puthexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymaaloum <ymaaloum@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 19:30:28 by ymaaloum          #+#    #+#             */
-/*   Updated: 2022/11/09 23:12:38 by ymaaloum         ###   ########.fr       */
+/*   Created: 2022/11/04 01:14:44 by ymaaloum          #+#    #+#             */
+/*   Updated: 2024/05/21 03:18:09 by ymaaloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
-static int	ft_lengthnbr(long n)
+static int	ft_length(unsigned int n)
 {
 	int	count;
 
 	count = 0;
-	if (n <= 0)
-	{
-		n *= -1;
+	if (n == 0)
 		count++;
-	}
 	while (n > 0)
 	{
-		n /= 10;
+		n /= 16;
 		count++;
 	}
 	return (count);
 }
 
-int	ft_putnbr(int n)
+int	ft_puthexa(unsigned int n, char index)
 {
-	int		lenght;
-	long	nombre;
+	int		length;
+	char	*s;
 
-	nombre = n;
-	lenght = ft_lengthnbr(nombre);
-	if (nombre < 0)
-	{
-		write(1, "-", 1);
-		nombre *= -1;
-	}
-	if (nombre >= 0 && nombre <= 9)
-	{
-		nombre += 48;
-		ft_putchar (nombre);
-	}
+	length = ft_length(n);
+	if (index == 'x')
+		s = "0123456789abcdef";
+	else
+		s = "0123456789ABCDEF";
+	if (n >= 0 && n <= 15)
+		ft_putchar(s[n]);
 	else
 	{
-		ft_putnbr(nombre / 10);
-		ft_putnbr(nombre % 10);
+		ft_puthexa(n / 16, index);
+		ft_puthexa(n % 16, index);
 	}
-	return (lenght);
+	return (length);
 }

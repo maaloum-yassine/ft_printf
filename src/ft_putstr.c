@@ -6,11 +6,11 @@
 /*   By: ymaaloum <ymaaloum@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:18:58 by ymaaloum          #+#    #+#             */
-/*   Updated: 2022/11/09 22:42:10 by ymaaloum         ###   ########.fr       */
+/*   Updated: 2024/05/21 03:18:00 by ymaaloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 int	ft_putstr(char *str)
 {

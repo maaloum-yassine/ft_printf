@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_ns.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymaaloum <ymaaloum@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 01:10:35 by ymaaloum          #+#    #+#             */
-/*   Updated: 2022/11/09 22:58:34 by ymaaloum         ###   ########.fr       */
+/*   Created: 2022/11/03 19:30:28 by ymaaloum          #+#    #+#             */
+/*   Updated: 2024/05/21 03:18:05 by ymaaloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
-static int	ft_lengthnbr(unsigned int n)
+static int	ft_lengthnbr(long n)
 {
 	int	count;
 
 	count = 0;
-	if (n == 0)
+	if (n <= 0)
+	{
+		n *= -1;
 		count++;
+	}
 	while (n > 0)
 	{
 		n /= 10;
@@ -27,20 +30,27 @@ static int	ft_lengthnbr(unsigned int n)
 	return (count);
 }
 
-int	ft_putnbr_ns(unsigned int n)
+int	ft_putnbr(int n)
 {
-	int	length;
+	int		lenght;
+	long	nombre;
 
-	length = ft_lengthnbr(n);
-	if (n >= 0 && n <= 9)
+	nombre = n;
+	lenght = ft_lengthnbr(nombre);
+	if (nombre < 0)
 	{
-		n += 48;
-		ft_putchar(n);
+		write(1, "-", 1);
+		nombre *= -1;
+	}
+	if (nombre >= 0 && nombre <= 9)
+	{
+		nombre += 48;
+		ft_putchar (nombre);
 	}
 	else
 	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
+		ft_putnbr(nombre / 10);
+		ft_putnbr(nombre % 10);
 	}
-	return (length);
+	return (lenght);
 }

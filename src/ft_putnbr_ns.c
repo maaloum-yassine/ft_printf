@@ -1,23 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_ns.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymaaloum <ymaaloum@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 02:38:45 by ymaaloum          #+#    #+#             */
-/*   Updated: 2024/05/20 05:10:40 by ymaaloum         ###   ########.fr       */
+/*   Created: 2022/11/04 01:10:35 by ymaaloum          #+#    #+#             */
+/*   Updated: 2024/05/21 03:18:07 by ymaaloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
-size_t	ft_strlen(const char *s)
+static int	ft_lengthnbr(unsigned int n)
 {
-	size_t	length;
+	int	count;
 
-	length = 0;
-	while (s[length])
-		length++;
+	count = 0;
+	if (n == 0)
+		count++;
+	while (n > 0)
+	{
+		n /= 10;
+		count++;
+	}
+	return (count);
+}
+
+int	ft_putnbr_ns(unsigned int n)
+{
+	int	length;
+
+	length = ft_lengthnbr(n);
+	if (n >= 0 && n <= 9)
+	{
+		n += 48;
+		ft_putchar(n);
+	}
+	else
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
 	return (length);
 }
