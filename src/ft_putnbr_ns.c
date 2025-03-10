@@ -6,7 +6,7 @@
 /*   By: ymaaloum <ymaaloum@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 01:10:35 by ymaaloum          #+#    #+#             */
-/*   Updated: 2024/05/21 03:18:07 by ymaaloum         ###   ########.fr       */
+/*   Updated: 2025/03/10 11:50:36 by ymaaloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_putnbr_ns(unsigned int n)
 	int	length;
 
 	length = ft_lengthnbr(n);
-	if (n >= 0 && n <= 9)
+	if ((int)n >= 0 && (int)n <= 9)
 	{
 		n += 48;
 		ft_putchar(n);

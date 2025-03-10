@@ -6,7 +6,7 @@
 /*   By: ymaaloum <ymaaloum@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 04:51:25 by ymaaloum          #+#    #+#             */
-/*   Updated: 2024/05/21 03:18:13 by ymaaloum         ###   ########.fr       */
+/*   Updated: 2025/03/10 11:48:46 by ymaaloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_put_adress(unsigned long n)
 
 	s = "0123456789abcdef";
 	count = ft_length(n);
-	if (n >= 0 && n <= 15)
+	if ((int)n >= 0 && (int)n <= 15)
 		ft_putchar(s[n]);
 	else
 	{

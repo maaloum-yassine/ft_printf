@@ -6,7 +6,7 @@
 /*   By: ymaaloum <ymaaloum@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 01:14:44 by ymaaloum          #+#    #+#             */
-/*   Updated: 2024/05/21 03:18:09 by ymaaloum         ###   ########.fr       */
+/*   Updated: 2025/03/10 11:49:40 by ymaaloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_puthexa(unsigned int n, char index)
 		s = "0123456789abcdef";
 	else
 		s = "0123456789ABCDEF";
-	if (n >= 0 && n <= 15)
+	if ((int)n >= 0 && (int)n <= 15)
 		ft_putchar(s[n]);
 	else
 	{
