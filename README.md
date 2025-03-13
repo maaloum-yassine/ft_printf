@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://github.com/maaloum-yassine/42/blob/main/logo_project42/ft_printfe.png" alt="get_next_line 42 project badge"/>
+  <img src="https://github.com/maaloum-yassine/42/blob/main/logo_project42/ft_printfe.png" alt="printf 42 project badge"/>
 </p>
 
 ## 🎥 Score 🥇✅
 <p align="center">
-  <img src="https://github.com/maaloum-yassine/42/blob/main/score/printf_42.png" alt="Score 42 project 115"/>
+  <img src="https://github.com/maaloum-yassine/42/blob/main/score/printf_42.png" alt="Score 42 project 100"/>
 </p>
 
 
